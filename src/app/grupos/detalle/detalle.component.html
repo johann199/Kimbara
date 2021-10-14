@@ -1,0 +1,25 @@
+<div class="card mt-2" >
+  <div class="card-header">
+    Detalles Bailarin
+  </div>
+    <div class="card-body" >
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Nombre: <h5>{{grupos?.nombre}}</h5>
+        </li>
+        <li class="list-group-item">
+          Grupo: <h5>{{grupos?.grupo}}</h5>
+        </li>
+        <li class="list-group-item">
+          Pago: <h5>{{grupos?.pago}}</h5>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="btn-group" role="group">
+    <button class="btn btn-outline-secondary btn-sm m-1" (click)="onGoRegresar()">Regresar</button>
+    <button class="btn btn-info btn-sm m-1" (click)="onGoToEdit()">Editar </button>
+    <button class="btn btn-danger btn-sm m-1" (click)="onGoToDelete()"> Elimiar </button>
+
+  </div>
+<br>

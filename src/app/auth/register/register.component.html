@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-md-6 mx-auto mt-5">
+    <div class="card">
+      <img style="width: 500px;" src="../assets/imagenes/Logos/LOGO KIMBARA.png" alt="">
+      <div class="card-body">
+        <h2>Registrar</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email </label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" >
+          </div>
+          <button type="submit" class="btn btn-primary" >Registrar</button>
+        </form>
+         <p> ya tienes una cuenta?<a [routerLink]="['/login']">Iniciar Sesion</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+  <footer  id="footer" class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+
+        <div class="col-6 col-md">
+          <h5>Redes sociales</h5>
+          <ul  class="list-unstyled text-small">
+            <li><a class="text-muted" href="https://es-la.facebook.com/kimbaralatin/">
+              <img style="width: 30px; height: 30px;" src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png" alt=""></a></li>
+            <li><a class="text-muted" href="https://www.instagram.com/kimbaralatin/?hl=es-la">
+              <img  style="width: 30px; height: 30px;" src="https://cdn-icons-png.flaticon.com/128/1400/1400829.png" alt=""></a></li>
+            <li><a class="text-muted" href="https://wa.link/mlvsg8">
+              <img style="width: 30px; height: 30px;"src="https://image.flaticon.com/icons/png/128/1051/1051323.png" alt=""></a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Contactos</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" ></a>Correo: hecfa69@gmail.com</li>
+            <li><a class="text-muted" ></a>Teléfono: 2830250.</li>
+            <li><a class="text-muted" ></a>Celular:3154207109 - 3104485366 </li>
+            <li><a class="text-muted" ></a>Direccion: Calle 36 # 21-17 2do piso.</li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Servicios</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href='/galeria' >Galeria de imagenes</a></li>
+            <li><a class="text-muted" href='/servicios'>Servicios</a></li>
+          </ul>
+        </div>
+
+      </div>
+      </footer>
+</div>

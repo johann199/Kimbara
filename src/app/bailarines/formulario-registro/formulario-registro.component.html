@@ -1,0 +1,344 @@
+
+<form  [formGroup]="bailarinForm" (ngSubmit)=onSaveForm()>
+  <div style="align-content: center;">
+    <img   src="../assets/imagenes/Logos/kimbara corto.png" alt="">
+  </div>
+  <mat-stepper  linear>
+    <mat-step  >
+      <div class="row">
+        <div class="col-md-4 mt-4">
+          <label for="nombres" class="form-label">Nombres</label>
+          <input type="text" class="form-control"    formControlName="nombre" [class]="isValidField('nombre')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('nombre')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-4 mt-4">
+          <label for="apellidos" class="form-label">Apellidos</label>
+          <input type="text" class="form-control"   formControlName="apellido" [class]="isValidField('apellido')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('apellido')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-4 mt-4">
+          <label for="apellidos" class="form-label">Edad</label>
+          <input type="number" class="form-control"   formControlName="edad" [class]="isValidField('edad')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('edad')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class=" form-group col-md-4 mt-4">
+          <label for="nacimiento" class="form-label">Fecha de nacimiento</label>
+          <div class="input-group">
+            <input type="date" class="form-control"   formControlName="nacimiento" [class]="isValidField('nacimiento')" aria-describedby="inputGroupPrepend2" required>
+            <div class="invalid-feedback">
+              <span *ngIf="bailarinForm.get('nacimiento')!.errors?.required">
+                Este campo es requerido
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-4 mt-4">
+          <label for="apellidos" class="form-label">Lugar Nacimiento</label>
+          <input type="text" class="form-control"   formControlName="lugarNacimiento"  [class]="isValidField('lugarNacimiento')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('lugarNacimiento')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-4 mt-4">
+          <label for="tipoDocumento" class="form-label">Tipo de documento</label>
+          <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"  formControlName="documentoiden" id="inlineRadio1" value="TI" (change)="onTiOrCC(false)">
+            <label class="form-check-label"  for="inlineRadio1">TI</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"  formControlName="documentoiden" id="inlineRadio2" value="CC" (change)="onTiOrCC(true)">
+            <label class="form-check-label" for="inlineRadio2">CC</label>
+          </div>
+        </div>
+        <div class="form-group col-md-4 mt-4">
+          <label for="numeroDocumento" class="form-label">Numero de Documento</label>
+          <input type="number" class="form-control"   formControlName="nuip" [class]="isValidField('nuip')"required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('nuip')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-4 mt-4">
+          <label for="direccion" class="form-label">Direccion</label>
+          <input type="text" class="form-control" placeholder="Cra/Cll 01A # 02-03"  formControlName="direccionb" [class]="isValidField('direccionb')" aria-describedby="inputGroupPrepend2" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('direccionb')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+
+        </div>
+        <div class="form-group col-md-4 mt-4">
+          <label for="ciudad" class="form-label">Ciudad</label>
+          <input type="text" class="form-control"  formControlName="ciudad" [class]="isValidField('ciudad')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('ciudad')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-4 mt-4">
+          <label for="departamento" class="form-label">Departamento</label>
+          <div class="input-group">
+            <input type="text" class="form-control"   formControlName="departamento"  [class]="isValidField('departamento')" aria-describedby="inputGroupPrepend2" required>
+            <div class="invalid-feedback">
+              <span *ngIf="bailarinForm.get('departamento')!.errors?.required">
+                Este campo es requerido
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class=" form-group col-md-4 mt-4">
+          <label for="telefonoF" class="form-label">Teléfono Fijo</label>
+          <input type="text" class="form-control"  formControlName="teleFijo" [class]="isValidField('teleFijo')"required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('teleFijo')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-4 mt-4">
+          <label for="celular" class="form-label">Celular</label>
+          <input type="text" class="form-control"   formControlName="celularB" [class]="isValidField('celularB')"required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('celularB')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class=" form-group col-md-6 mt-4">
+          <label for="correo" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control"  formControlName="correo"  [class]="isValidField('correo')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('correo')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class=" form-group col-md-6 mt-4">
+          <label for="correo" class="form-label">Actividad</label>
+          <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"  formControlName="actividad" value="Estudiante"  (change)="onTiOrCC(true)"id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Estudiante
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"  formControlName="actividad"  value="Empleado" (change)="onTiOrCC(false)" id="flexRadioDefault2" >
+            <label class="form-check-label" for="flexRadioDefault2" >
+              Empleado
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"    formControlName="actividad" id="flexRadioDefault3"  value="Independiente" (change)="onTiOrCC(false)" >
+            <label class="form-check-label" for="flexRadioDefault3">
+              Independiente
+            </label>
+          </div>
+        </div>
+        <br>
+      </div>
+      <div>
+        <button mat-button matStepperNext type="button">Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step  >
+      <div class="row">
+        <div class=" form-group col-md-12">
+          <label for="nombrep" class="form-label">Nombre Del Padre</label>
+          <input type="text" class="form-control"  formControlName="nombrep" [class]="isValidField('nombrep')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('nombrep')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="identificacionp" class="form-label">Identificación</label>
+          <input type="number" class="form-control"   formControlName="idenp" [class]="isValidField('idenp')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('idenp')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="correop" class="form-label">Correo</label>
+          <input type="email" class="form-control"  formControlName="correop" [class]="isValidField('correop')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('correop')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="tcp" class="form-label">Teléfono Celular</label>
+          <input type="text" class="form-control"  formControlName="telefonoMovilP" [class]="isValidField('telefonoMovilP')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('telefonoMovilP')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="direccionp" class="form-label">Direccion</label>
+          <input type="text" class="form-control"  formControlName="direccionp" [class]="isValidField('direccionp')" placeholder="Cra/Cll 01A # 02-03" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('direccionp')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="ocupacionp" class="form-label">Ocupación</label>
+          <input type="text" class="form-control"  formControlName="ocupacionp" [class]="isValidField('ocupacionp')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('ocupacionp')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="ttp" class="form-label">Teléfono Del Trabajo</label>
+          <input type="text" class="form-control"  formControlName="teletrabajp" [class]="isValidField('teletrabajp')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('teletrabajp')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious type="button">Atras</button>
+        <button mat-button matStepperNext type="button">Siguiente</button>
+      </div>
+
+    </mat-step>
+    <mat-step >
+      <div class="row">
+        <div class="form-group col-md-12 mt-4">
+          <label for="nombrem" class="form-label">Nombre De La Madre</label>
+          <input type="text" class="form-control"  formControlName="nombrem" [class]="isValidField('nombrem')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('nombrem')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="idenm" class="form-label">Identificación</label>
+          <input type="number" class="form-control"  formControlName="idenm" [class]="isValidField('idenm')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('idenm')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="emailm" class="form-label">Correo</label>
+          <input type="email" class="form-control"  formControlName="correom" [class]="isValidField('correom')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('correom')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="tcm" class="form-label">Teléfono Celular</label>
+          <input type="text" class="form-control"  formControlName="telefonoMovilm" [class]="isValidField('telefonoMovilm')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('telefonoMovilm')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="direccionm" class="form-label">Direccion</label>
+          <input type="text" class="form-control"  formControlName="direccionm" [class]="isValidField('direccionm')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('direccionm')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class=" form-group col-md-6">
+          <label for="ocupacionm" class="form-label">Ocupación</label>
+          <input type="text" class="form-control"  formControlName="ocupacionm" [class]="isValidField('ocupacionm')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('ocupacionm')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+        <div class=" form-group col-md-6">
+          <label for="ttm" class="form-label">Teléfono Del Trabajo</label>
+          <input type="text" class="form-control"  formControlName="teletrabajm" [class]="isValidField('teletrabajm')" required>
+          <div class="invalid-feedback">
+            <span *ngIf="bailarinForm.get('teletrabajm')!.errors?.required">
+              Este campo es requerido
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <br>
+      <div>
+        <button mat-button matStepperPrevious type="button">Atras</button>
+        <button mat-button  type="submit">Guardar</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</form>
+<div class="container">
+  <footer  id="footer" class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+
+        <div class="col-6 col-md">
+          <h5>Redes sociales</h5>
+          <ul  class="list-unstyled text-small">
+            <li><a class="text-muted" href="https://es-la.facebook.com/kimbaralatin/">
+              <img style="width: 30px; height: 30px;" src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png" alt=""></a></li>
+            <li><a class="text-muted" href="https://www.instagram.com/kimbaralatin/?hl=es-la">
+              <img  style="width: 30px; height: 30px;" src="https://cdn-icons-png.flaticon.com/128/1400/1400829.png" alt=""></a></li>
+            <li><a class="text-muted" href="https://wa.link/mlvsg8">
+              <img style="width: 30px; height: 30px;"src="https://image.flaticon.com/icons/png/128/1051/1051323.png" alt=""></a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Contactos</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" ></a>Correo: hecfa69@gmail.com</li>
+            <li><a class="text-muted" ></a>Teléfono: 2830250.</li>
+            <li><a class="text-muted" ></a>Celular:3154207109 - 3104485366 </li>
+            <li><a class="text-muted" ></a>Direccion: Calle 36 # 21-17 2do piso.</li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Servicios</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href='/galeria' >Galeria de imagenes</a></li>
+            <li><a class="text-muted" href='/servicios'>Servicios</a></li>
+          </ul>
+        </div>
+
+      </div>
+      </footer>
+</div>

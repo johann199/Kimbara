@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kimbara-a4b7b": {
+      "hosting": {
+        "kimbara": [
+          "kimbara-a4b7b"
+        ]
+      }
+    }
+  }
+}
